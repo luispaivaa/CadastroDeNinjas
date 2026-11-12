@@ -1,6 +1,9 @@
-package dev.java10x.CadastroDeNinjas;
+package dev.java10x.CadastroDeNinjas.Ninjas;
 
+import dev.java10x.CadastroDeNinjas.Missions.MissionsModel;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "tb_register") // JPA - JAVA PERSISTENCE API
@@ -9,10 +12,16 @@ public class NinjaModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String name;
+
     private String email;
+
     private int age;
 
+    @ManyToOne // A ninja have just one mission
+    @JoinColumn(name = "missions_id") // Foreign key
+    private MissionsModel missions;
     public NinjaModel() {
     }
 
