@@ -6,7 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
+@Entity // class to entity
 @Table(name = "tb_register") // JPA - JAVA PERSISTENCE API
 @NoArgsConstructor // Lombok - automatically creates no args constructor
 @AllArgsConstructor // Lombok - automatically creates all args constructors
