@@ -2,11 +2,15 @@ package dev.java10x.CadastroDeNinjas.Ninjas;
 
 import dev.java10x.CadastroDeNinjas.Missions.MissionsModel;
 import jakarta.persistence.*;
-
-import java.util.List;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "tb_register") // JPA - JAVA PERSISTENCE API
+@NoArgsConstructor // Lombok - automatically creates no args constructor
+@AllArgsConstructor // Lombok - automatically creates all args constructors
+@Data // automatically creates all getters and setters
 public class NinjaModel {
 
     @Id
@@ -22,36 +26,5 @@ public class NinjaModel {
     @ManyToOne // A ninja have just one mission
     @JoinColumn(name = "missions_id") // Foreign key
     private MissionsModel missions;
-    public NinjaModel() {
-    }
 
-    public NinjaModel(String name, String email, int age) {
-        this.name = name;
-        this.email = email;
-        this.age = age;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
 }
