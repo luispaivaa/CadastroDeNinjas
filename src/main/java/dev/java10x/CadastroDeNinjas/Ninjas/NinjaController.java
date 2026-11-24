@@ -32,8 +32,8 @@ public class NinjaController {
     }
 
     // show ninja by id (READ)
-    @GetMapping("/list-by-id/{id}")
-    public Optional<NinjaModel> getById(@PathVariable Long id) {
+    @GetMapping("/list/{id}")
+    public NinjaModel listById(@PathVariable Long id) {
         return ninjaService.listNinjaById(id);
     }
 
