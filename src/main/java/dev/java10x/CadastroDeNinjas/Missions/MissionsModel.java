@@ -1,5 +1,6 @@
 package dev.java10x.CadastroDeNinjas.Missions;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.java10x.CadastroDeNinjas.Ninjas.NinjaModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -24,6 +25,7 @@ public class MissionsModel {
     private String difficulty;
 
     @OneToMany(mappedBy = "missions") // A mission might have many ninjas
+    @JsonIgnore
     private List<NinjaModel> ninjas;
 
 }
